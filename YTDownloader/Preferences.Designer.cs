@@ -36,6 +36,8 @@
             YTDLTextBox = new TextBox();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            groupBox4 = new GroupBox();
+            autoDownloadBox = new CheckBox();
             groupBox3 = new GroupBox();
             minimizeToTrayBox = new CheckBox();
             showInTrayBox = new CheckBox();
@@ -50,6 +52,7 @@
             okBtn = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
             groupBox1.SuspendLayout();
+            groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -69,12 +72,12 @@
             downloadDirTextBox.Location = new Point(156, 26);
             downloadDirTextBox.Name = "downloadDirTextBox";
             downloadDirTextBox.ReadOnly = true;
-            downloadDirTextBox.Size = new Size(311, 27);
+            downloadDirTextBox.Size = new Size(337, 27);
             downloadDirTextBox.TabIndex = 1;
             // 
             // browseDownloadsBtn
             // 
-            browseDownloadsBtn.Location = new Point(473, 25);
+            browseDownloadsBtn.Location = new Point(499, 24);
             browseDownloadsBtn.Name = "browseDownloadsBtn";
             browseDownloadsBtn.Size = new Size(94, 29);
             browseDownloadsBtn.TabIndex = 2;
@@ -84,7 +87,7 @@
             // 
             // browseYTDLBtn
             // 
-            browseYTDLBtn.Location = new Point(473, 58);
+            browseYTDLBtn.Location = new Point(499, 57);
             browseYTDLBtn.Name = "browseYTDLBtn";
             browseYTDLBtn.Size = new Size(94, 29);
             browseYTDLBtn.TabIndex = 5;
@@ -97,7 +100,7 @@
             YTDLTextBox.Location = new Point(156, 59);
             YTDLTextBox.Name = "YTDLTextBox";
             YTDLTextBox.ReadOnly = true;
-            YTDLTextBox.Size = new Size(311, 27);
+            YTDLTextBox.Size = new Size(337, 27);
             YTDLTextBox.TabIndex = 4;
             // 
             // label2
@@ -111,6 +114,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(ffmpegPathBtn);
             groupBox1.Controls.Add(ffmpegPathTextbox);
@@ -129,6 +133,27 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Ogólne";
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(autoDownloadBox);
+            groupBox4.Location = new Point(12, 280);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(581, 125);
+            groupBox4.TabIndex = 14;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Po dodaniu URL do kolejki:";
+            // 
+            // autoDownloadBox
+            // 
+            autoDownloadBox.AutoSize = true;
+            autoDownloadBox.Location = new Point(10, 26);
+            autoDownloadBox.Name = "autoDownloadBox";
+            autoDownloadBox.Size = new Size(255, 24);
+            autoDownloadBox.TabIndex = 0;
+            autoDownloadBox.Text = "Zacznij pobieranie automatycznie";
+            autoDownloadBox.UseVisualStyleBackColor = true;
+            autoDownloadBox.CheckedChanged += autoDownloadBox_CheckedChanged;
+            // 
             // groupBox3
             // 
             groupBox3.Controls.Add(minimizeToTrayBox);
@@ -136,7 +161,7 @@
             groupBox3.Controls.Add(closeToTrayBox);
             groupBox3.Location = new Point(12, 126);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(555, 86);
+            groupBox3.Size = new Size(581, 86);
             groupBox3.TabIndex = 13;
             groupBox3.TabStop = false;
             // 
@@ -175,7 +200,7 @@
             // 
             // ffmpegPathBtn
             // 
-            ffmpegPathBtn.Location = new Point(473, 91);
+            ffmpegPathBtn.Location = new Point(499, 90);
             ffmpegPathBtn.Name = "ffmpegPathBtn";
             ffmpegPathBtn.Size = new Size(94, 29);
             ffmpegPathBtn.TabIndex = 11;
@@ -188,7 +213,7 @@
             ffmpegPathTextbox.Location = new Point(156, 92);
             ffmpegPathTextbox.Name = "ffmpegPathTextbox";
             ffmpegPathTextbox.ReadOnly = true;
-            ffmpegPathTextbox.Size = new Size(311, 27);
+            ffmpegPathTextbox.Size = new Size(337, 27);
             ffmpegPathTextbox.TabIndex = 10;
             // 
             // label3
@@ -205,7 +230,7 @@
             groupBox2.Controls.Add(showSysNotifCheck);
             groupBox2.Location = new Point(12, 218);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(555, 56);
+            groupBox2.Size = new Size(581, 56);
             groupBox2.TabIndex = 8;
             groupBox2.TabStop = false;
             groupBox2.Text = "Po ukończeniu pobierania:";
@@ -213,7 +238,7 @@
             // showSysNotifCheck
             // 
             showSysNotifCheck.AutoSize = true;
-            showSysNotifCheck.Location = new Point(6, 26);
+            showSysNotifCheck.Location = new Point(10, 26);
             showSysNotifCheck.Name = "showSysNotifCheck";
             showSysNotifCheck.Size = new Size(177, 24);
             showSysNotifCheck.TabIndex = 7;
@@ -282,6 +307,8 @@
             Load += Preferences_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -312,5 +339,7 @@
         private CheckBox showInTrayBox;
         private CheckBox minimizeToTrayBox;
         private FlowLayoutPanel flowLayoutPanel1;
+        private GroupBox groupBox4;
+        private CheckBox autoDownloadBox;
     }
 }

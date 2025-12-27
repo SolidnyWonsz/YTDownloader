@@ -68,6 +68,20 @@ namespace YTDownloader
             };
             downloadQueue.Add(element);
             refreshList();
+
+            if (Program.autoDownload)
+            {
+                await autoDownload(element);
+            }
+        }
+
+        async Task autoDownload(FileElement file)
+        {
+            var tasks = downloadQueue
+                        .Select(item => downloadURLAsync(file))
+                        .ToList();
+
+            await Task.WhenAll(tasks);
         }
 
         string formatSongName(YoutubeDLSharp.Metadata.VideoData video, string name)
