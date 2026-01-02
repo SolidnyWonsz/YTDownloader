@@ -39,7 +39,24 @@ namespace YTDownloader
 
             ToastNotificationManagerCompat.OnActivated += toastNotif_Activated;
 
+            if (Program.firstBoot) ifFirstBoot();
             if (Program.checkUpdateDaily) checkUpdate();
+        }
+
+        void ifFirstBoot()
+        {
+            Program.firstBoot = false;
+            Program.SaveConfig();
+
+            var result = MessageBox.Show("Czy by³byœ zainteresowany zakupieniem mi kawy?", "Proszê", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Process.Start(new ProcessStartInfo()
+                {
+                    FileName = "https://ko-fi.com/solidnywonsz",
+                    UseShellExecute = true
+                });
+            }
         }
 
         void checkUpdate()
@@ -61,39 +78,6 @@ namespace YTDownloader
             }
         }
 
-        internal struct ProgramVer
-        {
-            public int major, minor;
-
-            public static bool operator >(ProgramVer lhs, ProgramVer rhs)
-            {
-                return lhs.major > rhs.major && lhs.minor > rhs.minor;
-            }
-
-            public static bool operator <(ProgramVer lhs, ProgramVer rhs)
-            {
-                return lhs.major < rhs.major && lhs.minor < rhs.minor;
-            }
-
-            /// <summary>
-            /// Zamienia wersje programu z tekstu na ProgramVer
-            /// </summary>
-            /// <param name="ver">Wersja w postaci tekstu</param>
-            /// <returns>Nowy obiekt</returns>
-            /// <exception cref="VersionFormatWrongException"></exception>
-            public static ProgramVer FromString(string ver)
-            {
-                var str = ver.Split(".");
-                return new ProgramVer { major = int.Parse(str[0]), minor = int.Parse(str[1]) };
-            }
-        }
-
-        internal class VersionFormatWrongException : Exception
-        {
-            public VersionFormatWrongException() { }
-            public VersionFormatWrongException(string message) : base(message) { }
-        }
-
         async Task<int> processUpdate()
         {
             HttpClient http = new HttpClient();
@@ -106,9 +90,7 @@ namespace YTDownloader
 
             try
             {
-                ProgramVer currentVer = ProgramVer.FromString(Program.version);
-                ProgramVer newVer = ProgramVer.FromString(tagName.ToString());
-                if (currentVer < newVer)
+                if (Program.version != tagName.ToString())
                 {
                     var result = MessageBox.Show("Dostêpna jest nowa aktualizacja dla programu. Zaktualizowaæ?", "Aktualizacja", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                     if (result == DialogResult.Yes)

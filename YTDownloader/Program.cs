@@ -58,7 +58,8 @@ namespace YTDownloader
         public static bool minimizeToTray = false;
         public static bool autoDownload = true;
         public static bool checkUpdateDaily = true;
-        public static string version = "1.3";
+        public static string version = "1.4";
+        public static bool firstBoot = true;
 
         public static NotifyIcon notifyIcon = null;
 
@@ -90,6 +91,7 @@ namespace YTDownloader
                 ytDL.YoutubeDLPath = json.YtDLPath;
                 ytDL.FFmpegPath = json.FfmegPath;
                 autoDownload = json.autoDownload;
+                firstBoot = json.firstBoot;
             }
             catch (JsonException _)
             {
@@ -108,6 +110,7 @@ namespace YTDownloader
             config.YtDLPath = ytDL.YoutubeDLPath;
             config.FfmegPath = ytDL.FFmpegPath;
             config.autoDownload = autoDownload;
+            config.firstBoot = firstBoot;
 
             string s = JsonSerializer.Serialize(config);
             using (var f = File.CreateText(Path.Combine(appData, "config.json")))
@@ -126,6 +129,7 @@ namespace YTDownloader
             public bool minimizeToTray { get; set; } = Program.minimizeToTray;
             public bool showTrayIcon { get; set; } = Program.showTrayIcon;
             public bool autoDownload { get; set; } = true;
+            public bool firstBoot { get; set; } = true;
         }
     }
 }
