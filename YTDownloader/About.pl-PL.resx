@@ -122,10 +122,16 @@
     <value>True</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="githubLink.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="githubLink.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>8, 44</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="githubLink.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 132</value>
+  </data>
   <data name="githubLink.Size" type="System.Drawing.Size, System.Drawing">
     <value>401, 25</value>
   </data>
@@ -137,7 +143,7 @@
     <value>NoControl</value>
   </data>
   <data name="descriptionLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>429, 97</value>
+    <value>429, 129</value>
   </data>
   <data name="descriptionLbl.Text" xml:space="preserve">
     <value>YTDownloader 1.0
@@ -155,21 +161,6 @@ Copyright SolidnyWonsz 2025</value>
   </data>
   <data name="aboutSoftware.Text" xml:space="preserve">
     <value>O programie</value>
-  </data>
-  <data name="licensesLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="licensesLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 20</value>
-  </data>
-  <data name="licenses.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="licenses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 226</value>
-  </data>
-  <data name="licenses.Text" xml:space="preserve">
-    <value>Licencje</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
     <value>449, 259</value>
