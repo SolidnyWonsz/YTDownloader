@@ -39,6 +39,7 @@ namespace YTDownloader
             minimizeToTrayBox.Checked = Program.minimizeToTray;
             showInTrayBox.Checked = Program.showTrayIcon;
             autoDownloadBox.Checked = Program.autoDownload;
+            autoUpdateBox.Checked = Program.checkUpdateDaily;
 
             applyBtn.Enabled = false;
             minimizeToTrayBox.Enabled = showInTrayBox.Checked;
@@ -94,6 +95,7 @@ namespace YTDownloader
             Program.minimizeToTray = minimizeToTrayBox.Checked;
             Program.showTrayIcon = showInTrayBox.Checked;
             Program.autoDownload = autoDownloadBox.Checked;
+            Program.checkUpdateDaily = autoUpdateBox.Checked;
             Program.ytDL.YoutubeDLPath = YTDLTextBox.Text;
             Program.ytDL.FFmpegPath = ffmpegPathTextbox.Text;
             Program.SaveConfig();
@@ -156,6 +158,11 @@ namespace YTDownloader
         }
 
         private void autoDownloadBox_CheckedChanged(object sender, EventArgs e)
+        {
+            isDirty = true;
+        }
+
+        private void autoUpdateBox_CheckedChanged(object sender, EventArgs e)
         {
             isDirty = true;
         }

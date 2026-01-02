@@ -43,6 +43,7 @@
             preferencesBtn = new ToolStripMenuItem();
             pomocToolStripMenuItem = new ToolStripMenuItem();
             aboutBtn = new ToolStripMenuItem();
+            checkUpdateBtn = new ToolStripMenuItem();
             dataGridView1 = new DataGridView();
             FileName = new DataGridViewTextBoxColumn();
             FileExt = new DataGridViewTextBoxColumn();
@@ -50,12 +51,13 @@
             FileURL = new DataGridViewLinkColumn();
             notifyIcon = new NotifyIcon(components);
             notifyIconContextMenu = new ContextMenuStrip(components);
-            notifyIconVisibility = new ToolStripMenuItem();
-            dodajURLToolStripMenuItem = new ToolStripMenuItem();
-            notifyIconTerminate = new ToolStripMenuItem();
             zacznijToolStripMenuItem = new ToolStripMenuItem();
             anulujToolStripMenuItem = new ToolStripMenuItem();
+            dodajURLToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator3 = new ToolStripSeparator();
+            notifyIconVisibility = new ToolStripMenuItem();
+            notifyIconTerminate = new ToolStripMenuItem();
+            manualBtn = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             notifyIconContextMenu.SuspendLayout();
@@ -130,7 +132,7 @@
             // pomocToolStripMenuItem
             // 
             resources.ApplyResources(pomocToolStripMenuItem, "pomocToolStripMenuItem");
-            pomocToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutBtn });
+            pomocToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutBtn, manualBtn, checkUpdateBtn });
             pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
             // 
             // aboutBtn
@@ -138,6 +140,12 @@
             resources.ApplyResources(aboutBtn, "aboutBtn");
             aboutBtn.Name = "aboutBtn";
             aboutBtn.Click += aboutBtn_Click;
+            // 
+            // checkUpdateBtn
+            // 
+            resources.ApplyResources(checkUpdateBtn, "checkUpdateBtn");
+            checkUpdateBtn.Name = "checkUpdateBtn";
+            checkUpdateBtn.Click += checkUpdateBtn_Click;
             // 
             // dataGridView1
             // 
@@ -195,24 +203,6 @@
             notifyIconContextMenu.Items.AddRange(new ToolStripItem[] { zacznijToolStripMenuItem, anulujToolStripMenuItem, dodajURLToolStripMenuItem, toolStripSeparator3, notifyIconVisibility, notifyIconTerminate });
             notifyIconContextMenu.Name = "notifyIconContextMenu";
             // 
-            // notifyIconVisibility
-            // 
-            resources.ApplyResources(notifyIconVisibility, "notifyIconVisibility");
-            notifyIconVisibility.Name = "notifyIconVisibility";
-            notifyIconVisibility.Click += notifyIconVisibility_Click;
-            // 
-            // dodajURLToolStripMenuItem
-            // 
-            resources.ApplyResources(dodajURLToolStripMenuItem, "dodajURLToolStripMenuItem");
-            dodajURLToolStripMenuItem.Name = "dodajURLToolStripMenuItem";
-            dodajURLToolStripMenuItem.Click += dodajURLToolStripMenuItem_Click;
-            // 
-            // notifyIconTerminate
-            // 
-            resources.ApplyResources(notifyIconTerminate, "notifyIconTerminate");
-            notifyIconTerminate.Name = "notifyIconTerminate";
-            notifyIconTerminate.Click += notifyIconTerminate_Click;
-            // 
             // zacznijToolStripMenuItem
             // 
             resources.ApplyResources(zacznijToolStripMenuItem, "zacznijToolStripMenuItem");
@@ -225,10 +215,34 @@
             anulujToolStripMenuItem.Name = "anulujToolStripMenuItem";
             anulujToolStripMenuItem.Click += cancelBtn_Click;
             // 
+            // dodajURLToolStripMenuItem
+            // 
+            resources.ApplyResources(dodajURLToolStripMenuItem, "dodajURLToolStripMenuItem");
+            dodajURLToolStripMenuItem.Name = "dodajURLToolStripMenuItem";
+            dodajURLToolStripMenuItem.Click += dodajURLToolStripMenuItem_Click;
+            // 
             // toolStripSeparator3
             // 
             resources.ApplyResources(toolStripSeparator3, "toolStripSeparator3");
             toolStripSeparator3.Name = "toolStripSeparator3";
+            // 
+            // notifyIconVisibility
+            // 
+            resources.ApplyResources(notifyIconVisibility, "notifyIconVisibility");
+            notifyIconVisibility.Name = "notifyIconVisibility";
+            notifyIconVisibility.Click += notifyIconVisibility_Click;
+            // 
+            // notifyIconTerminate
+            // 
+            resources.ApplyResources(notifyIconTerminate, "notifyIconTerminate");
+            notifyIconTerminate.Name = "notifyIconTerminate";
+            notifyIconTerminate.Click += notifyIconTerminate_Click;
+            // 
+            // manualBtn
+            // 
+            resources.ApplyResources(manualBtn, "manualBtn");
+            manualBtn.Name = "manualBtn";
+            manualBtn.Click += manualBtn_Click;
             // 
             // YTDownloader
             // 
@@ -277,5 +291,7 @@
         private ToolStripMenuItem zacznijToolStripMenuItem;
         private ToolStripMenuItem anulujToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator3;
+        private ToolStripMenuItem checkUpdateBtn;
+        private ToolStripMenuItem manualBtn;
     }
 }

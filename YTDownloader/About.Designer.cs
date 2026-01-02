@@ -32,7 +32,7 @@
             tabControl1 = new TabControl();
             aboutSoftware = new TabPage();
             githubLink = new LinkLabel();
-            label1 = new Label();
+            descriptionLbl = new Label();
             licenses = new TabPage();
             licensesLabel = new Label();
             tabControl1.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             resources.ApplyResources(aboutSoftware, "aboutSoftware");
             aboutSoftware.Controls.Add(githubLink);
-            aboutSoftware.Controls.Add(label1);
+            aboutSoftware.Controls.Add(descriptionLbl);
             aboutSoftware.Name = "aboutSoftware";
             aboutSoftware.UseVisualStyleBackColor = true;
             // 
@@ -64,10 +64,10 @@
             githubLink.UseCompatibleTextRendering = true;
             githubLink.LinkClicked += githubLink_LinkClicked;
             // 
-            // label1
+            // descriptionLbl
             // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
+            resources.ApplyResources(descriptionLbl, "descriptionLbl");
+            descriptionLbl.Name = "descriptionLbl";
             // 
             // licenses
             // 
@@ -105,7 +105,7 @@
         private TabControl tabControl1;
         private TabPage aboutSoftware;
         private TabPage licenses;
-        private Label label1;
+        private Label descriptionLbl;
         private LinkLabel githubLink;
         private Label licensesLabel;
     }

@@ -51,6 +51,7 @@
             cancelBtn = new Button();
             okBtn = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            autoUpdateBox = new CheckBox();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -114,6 +115,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(autoUpdateBox);
             groupBox1.Controls.Add(groupBox4);
             groupBox1.Controls.Add(groupBox3);
             groupBox1.Controls.Add(ffmpegPathBtn);
@@ -136,9 +138,9 @@
             // groupBox4
             // 
             groupBox4.Controls.Add(autoDownloadBox);
-            groupBox4.Location = new Point(12, 280);
+            groupBox4.Location = new Point(12, 311);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(581, 125);
+            groupBox4.Size = new Size(581, 59);
             groupBox4.TabIndex = 14;
             groupBox4.TabStop = false;
             groupBox4.Text = "Po dodaniu URL do kolejki:";
@@ -159,7 +161,7 @@
             groupBox3.Controls.Add(minimizeToTrayBox);
             groupBox3.Controls.Add(showInTrayBox);
             groupBox3.Controls.Add(closeToTrayBox);
-            groupBox3.Location = new Point(12, 126);
+            groupBox3.Location = new Point(12, 157);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(581, 86);
             groupBox3.TabIndex = 13;
@@ -228,7 +230,7 @@
             // groupBox2
             // 
             groupBox2.Controls.Add(showSysNotifCheck);
-            groupBox2.Location = new Point(12, 218);
+            groupBox2.Location = new Point(12, 249);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(581, 56);
             groupBox2.TabIndex = 8;
@@ -287,6 +289,17 @@
             flowLayoutPanel1.Size = new Size(608, 430);
             flowLayoutPanel1.TabIndex = 10;
             // 
+            // autoUpdateBox
+            // 
+            autoUpdateBox.AutoSize = true;
+            autoUpdateBox.Location = new Point(12, 125);
+            autoUpdateBox.Name = "autoUpdateBox";
+            autoUpdateBox.Size = new Size(334, 24);
+            autoUpdateBox.TabIndex = 15;
+            autoUpdateBox.Text = "Raz dziennie sprawdzaj dostępne aktualizacje";
+            autoUpdateBox.UseVisualStyleBackColor = true;
+            autoUpdateBox.CheckedChanged += autoUpdateBox_CheckedChanged;
+            // 
             // Preferences
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -341,5 +354,6 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private GroupBox groupBox4;
         private CheckBox autoDownloadBox;
+        private CheckBox autoUpdateBox;
     }
 }

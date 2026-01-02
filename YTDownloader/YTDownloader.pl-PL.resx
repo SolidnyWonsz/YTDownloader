@@ -161,10 +161,19 @@
     <value>Edycja</value>
   </data>
   <data name="aboutBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 26</value>
+    <value>231, 26</value>
   </data>
   <data name="aboutBtn.Text" xml:space="preserve">
     <value>O programie</value>
+  </data>
+  <data name="manualBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>231, 26</value>
+  </data>
+  <data name="manualBtn.Text" xml:space="preserve">
+    <value>Obsługa</value>
+  </data>
+  <data name="checkUpdateBtn.Text" xml:space="preserve">
+    <value>Sprawdź aktualizacje</value>
   </data>
   <data name="pomocToolStripMenuItem.Text" xml:space="preserve">
     <value>Pomoc</value>
@@ -198,34 +207,40 @@
     <value>695, 335</value>
   </data>
   <data name="zacznijToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 24</value>
+    <value>149, 24</value>
   </data>
   <data name="zacznijToolStripMenuItem.Text" xml:space="preserve">
     <value>Zacznij</value>
   </data>
   <data name="anulujToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 24</value>
+    <value>149, 24</value>
   </data>
   <data name="anulujToolStripMenuItem.Text" xml:space="preserve">
     <value>Anuluj</value>
   </data>
   <data name="dodajURLToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>210, 24</value>
+    <value>149, 24</value>
   </data>
   <data name="dodajURLToolStripMenuItem.Text" xml:space="preserve">
     <value>Dodaj URL</value>
   </data>
   <data name="toolStripSeparator3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>207, 6</value>
+    <value>146, 6</value>
+  </data>
+  <data name="notifyIconVisibility.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
   </data>
   <data name="notifyIconVisibility.Text" xml:space="preserve">
     <value>Ukryj</value>
+  </data>
+  <data name="notifyIconTerminate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 24</value>
   </data>
   <data name="notifyIconTerminate.Text" xml:space="preserve">
     <value>Zakończ</value>
   </data>
   <data name="notifyIconContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 158</value>
+    <value>150, 130</value>
   </data>
   <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

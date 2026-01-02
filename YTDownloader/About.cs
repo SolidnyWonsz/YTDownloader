@@ -28,7 +28,7 @@ namespace YTDownloader
         {
             ProcessStartInfo psInfo = new ProcessStartInfo
             {
-                FileName = "https://github.com/SolidnyWonsz",
+                FileName = "https://github.com/SolidnyWonsz/YTDownloader",
                 UseShellExecute = true
             };
             Process.Start(psInfo);
@@ -36,6 +36,7 @@ namespace YTDownloader
 
         private void About_Load(object sender, EventArgs e)
         {
+            descriptionLbl.Text = $"YTDownloader {Program.version}\r\n\r\nProsty i szybki menedżer pobierania filmów i utworów z serwisu Youtube.\r\n\r\nCopyright SolidnyWonsz 2025";
             foreach (string s in LICENSES)
             {
                 licensesLabel.Text += s + "\n";

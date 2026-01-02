@@ -57,6 +57,8 @@ namespace YTDownloader
         public static bool closeToTray = true;
         public static bool minimizeToTray = false;
         public static bool autoDownload = true;
+        public static bool checkUpdateDaily = true;
+        public static string version = "1.3";
 
         public static NotifyIcon notifyIcon = null;
 
