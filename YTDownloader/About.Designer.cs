@@ -29,24 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
-            tabControl1 = new TabControl();
             aboutSoftware = new TabPage();
-            githubLink = new LinkLabel();
             descriptionLbl = new Label();
-            licenses = new TabPage();
-            licensesLabel = new Label();
-            tabControl1.SuspendLayout();
+            githubLink = new LinkLabel();
+            tabControl1 = new TabControl();
             aboutSoftware.SuspendLayout();
-            licenses.SuspendLayout();
+            tabControl1.SuspendLayout();
             SuspendLayout();
-            // 
-            // tabControl1
-            // 
-            resources.ApplyResources(tabControl1, "tabControl1");
-            tabControl1.Controls.Add(aboutSoftware);
-            tabControl1.Controls.Add(licenses);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
             // 
             // aboutSoftware
             // 
@@ -56,6 +45,11 @@
             aboutSoftware.Name = "aboutSoftware";
             aboutSoftware.UseVisualStyleBackColor = true;
             // 
+            // descriptionLbl
+            // 
+            resources.ApplyResources(descriptionLbl, "descriptionLbl");
+            descriptionLbl.Name = "descriptionLbl";
+            // 
             // githubLink
             // 
             resources.ApplyResources(githubLink, "githubLink");
@@ -64,22 +58,12 @@
             githubLink.UseCompatibleTextRendering = true;
             githubLink.LinkClicked += githubLink_LinkClicked;
             // 
-            // descriptionLbl
+            // tabControl1
             // 
-            resources.ApplyResources(descriptionLbl, "descriptionLbl");
-            descriptionLbl.Name = "descriptionLbl";
-            // 
-            // licenses
-            // 
-            resources.ApplyResources(licenses, "licenses");
-            licenses.Controls.Add(licensesLabel);
-            licenses.Name = "licenses";
-            licenses.UseVisualStyleBackColor = true;
-            // 
-            // licensesLabel
-            // 
-            resources.ApplyResources(licensesLabel, "licensesLabel");
-            licensesLabel.Name = "licensesLabel";
+            resources.ApplyResources(tabControl1, "tabControl1");
+            tabControl1.Controls.Add(aboutSoftware);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
             // 
             // About
             // 
@@ -92,21 +76,17 @@
             ShowIcon = false;
             ShowInTaskbar = false;
             Load += About_Load;
-            tabControl1.ResumeLayout(false);
             aboutSoftware.ResumeLayout(false);
             aboutSoftware.PerformLayout();
-            licenses.ResumeLayout(false);
-            licenses.PerformLayout();
+            tabControl1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private TabControl tabControl1;
         private TabPage aboutSoftware;
-        private TabPage licenses;
-        private Label descriptionLbl;
         private LinkLabel githubLink;
-        private Label licensesLabel;
+        private Label descriptionLbl;
+        private TabControl tabControl1;
     }
 }

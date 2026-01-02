@@ -18,12 +18,6 @@ namespace YTDownloader
             InitializeComponent();
         }
 
-        readonly string[] LICENSES =
-        {
-            "Json.NET (NewtonSoft) (MIT)",
-            "YoutubeExtractor (Dennis Daume) (GPL 2.0)"
-        };
-
         private void githubLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ProcessStartInfo psInfo = new ProcessStartInfo
